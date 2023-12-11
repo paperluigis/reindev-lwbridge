@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "minVersion": "0.0.1",
+  "package": "org.duckdns.auby.reindev.lwbridge.server.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinServerConfigurationManager"
+  ]
+}

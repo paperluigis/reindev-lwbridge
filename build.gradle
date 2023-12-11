@@ -1,0 +1,32 @@
+buildscript {
+	repositories {
+		mavenCentral()
+		maven { url 'https://jitpack.io/' }
+	}
+	dependencies {
+		classpath('com.fox2code.FoxLoader:dev:1.2.29')
+	}
+}
+
+apply plugin: 'foxloader.dev'
+
+version '0.0.1'
+
+foxloader {
+	// forceReload = true
+	modId = "lwbridge"
+	modName = "funky bridge"
+	modVersion = project.version
+	modDesc = "a duck mod"
+	clientMod = null
+	serverMod = "org.duckdns.auby.reindev.lwbridge.DuckServer"
+	// Development tools don't like that both client and server define
+	// the same classes, so uncomment to disable the side inclusion.
+	includeClient = false
+	includeServer = true
+}
+
+javadoc {
+	source = sourceSets.main.allJava
+	classpath = configurations.compileClasspath
+}
